@@ -44,6 +44,8 @@ public class JoinRoom : MonoBehaviourPunCallbacks
             {
                 pressed = false;
                 OnLeftRoom(); //should work hehehhaw
+                RoomOptions options = new RoomOptions();
+                joinRoom(name,options);
             }
         }
     }
@@ -55,6 +57,11 @@ public class JoinRoom : MonoBehaviourPunCallbacks
         options.MaxPlayers = 10;
         options.IsVisible = false;
         options.IsOpen = true;
-        PhotonNetwork.JoinOrCreateRoom(roomName, options, null); //should work lol
+        joinRoom(roomName, options);
+    }
+
+    public void joinRoom(string roomName, RoomOptions options)
+    {
+        PhotonNetwork.JoinOrCreateRoom(roomName, options, null);
     }
 }
