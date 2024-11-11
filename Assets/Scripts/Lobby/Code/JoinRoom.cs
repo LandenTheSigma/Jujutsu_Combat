@@ -59,7 +59,7 @@ public class JoinRoom : MonoBehaviourPunCallbacks
         options.IsOpen = true;
         joinRoom(roomName, options);
     }
-
+    
     public void joinRoom(string roomName, RoomOptions options)
     {
         PhotonNetwork.JoinOrCreateRoom(roomName, options, null);
